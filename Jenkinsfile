@@ -1,24 +1,24 @@
 pipeline {
 	agent any
 	stages {
-		stage ('init') {
+		stage ('Init') {
 			steps {
-			terraform init
+			sh 'terraform init'
 			}
 		}
-		stage ('validate') {
+		stage ('Validate') {
 			steps {
-			terraform validate
+			sh 'terraform validate'
 			}
 		}
-		stage ('plan') {
+		stage ('Plan') {
 			steps {
-			terraform plan
+			sh 'terraform plan'
 			}
 		}
-		stage ('apply') {
+		stage ('Apply') {
 			steps {
-			terraform apply
+			sh 'terraform apply'
 			}
 		}
 	}
